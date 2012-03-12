@@ -1,11 +1,15 @@
 Ritvikblog2::Application.routes.draw do
+  devise_for :admins
+
+  resources :admins
+
   resources :users
 
   resources :userdatabases
 
   resources :posts
   
-root :to => "users#index"
+root :to => "posts#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
